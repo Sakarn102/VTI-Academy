@@ -26,8 +26,8 @@ create table Account (
     DepartmentID int,
     PositionID int,
     CreateDate timestamp default current_timestamp,
-    foreign key (DepartmentID) references Department(DepartmentID)
-    /*foreign key (PositionID) references Position(PositionID)*/
+    foreign key (DepartmentID) references Department (DepartmentID),
+    foreign key (PositionID) references Position (PositionID)
     );
     
 -- Table 4: Group(Team)
@@ -36,7 +36,8 @@ create table Team (
 	GroupID int auto_increment primary key,
     GroupName varchar(50) not null,
     CreatorID int,
-    CreateDate timestamp default current_timestamp
+    CreateDate timestamp default current_timestamp,
+    foreign key (CreatorID) references Account (AccountID)
 );
 
 -- Table 5: GroupAccount
@@ -46,8 +47,8 @@ create table GroupAccount (
     AccountID int,
     JoinDate timestamp default current_timestamp,
     primary key (GroupID, AccountID),
-    foreign key (GroupID) references Team(GroupID),
-    foreign key (AccountID) references Account(AccountID)
+    foreign key (GroupID) references Team (GroupID),
+    foreign key (AccountID) references Account (AccountID)
 );
 
 -- Table 6: TypeQuestion
@@ -73,8 +74,9 @@ create table Question (
     TypeID int,
     CreatorID int,
     CreateDate timestamp default current_timestamp,
-    foreign key (CategoryID) references CategoryQuestion(CategoryID),
-    foreign key (TypeID) references TypeQuestion(TypeID)
+    foreign key (CategoryID) references CategoryQuestion (CategoryID),
+    foreign key (TypeID) references TypeQuestion (TypeID),
+    foreign key (CreatorID) references Account (AccountID)
 );
 
 -- Table 9: Answer
@@ -84,7 +86,7 @@ create table Answer (
     Content text not null,
     QuestionID int,
     isCorrect boolean not null,
-    foreign key (QuestionID) references Question(QuestionID)
+    foreign key (QuestionID) references Question (QuestionID)
 );
 
 -- Table 10: Exam
@@ -97,7 +99,8 @@ create table Exam (
     Duration time,
     CreatorID int,
     CreateDate timestamp default current_timestamp,
-    foreign key (CategoryID) references CategoryQuestion(CategoryID)
+    foreign key (CategoryID) references CategoryQuestion (CategoryID),
+    foreign key (CreatorID) references Account (AccounrID)
 );
 
 -- Table 11: ExamQuestion
@@ -106,6 +109,6 @@ create table ExamQuestion (
 	ExamID int,
     QuestionID int,
     primary key (ExamID, QuestionID),
-    foreign key (ExamID) references Exam(ExamID),
-    foreign key (QuestionID) references Question(QuestionID)
+    foreign key (ExamID) references Exam (ExamID),
+    foreign key (QuestionID) references Question (QuestionID)
 );
