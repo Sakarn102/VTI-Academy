@@ -76,7 +76,7 @@ VALUES
     (10, 10, '2024-04-10');
 
 INSERT INTO TypeQuestion (Type_Name)
-VALUES  
+VALUES
     ('Essay'),  
     ('Multiple-Choice'),
     ('Essay'),  
@@ -169,7 +169,7 @@ select * from Account order by length(Full_Name) desc limit 1;
 select * from Account where Department_ID = 3 order by length(Full_Name)  desc limit 1;
 
 -- Question 6: Lấy ra tên group đã tham gia trước ngày 20/12/2019 
-select Group_Name from `Group` where Group_ID in (select Group_ID from GroupAccount where Join_Date < '2019-12-20');
+select Group_Name from `Group` where Group_ID in (select Group_ID from GroupAccount where Create_Date < '2019-12-20');
 
 -- Question 7: Lấy ra ID của question có >= 4 câu trả lời 
 select Question_id from Answer group by Question_id having count(*) >= 4;
