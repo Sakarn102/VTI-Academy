@@ -65,7 +65,8 @@ inner join
 	department d on a.department_id = d.department_id 
 group by 
 	d.department_id, d.department_name
-having count(a.account_id) = (
+having 
+	count(a.account_id) = (
 	select max(max_account_group)
     from (
 		select count(account_id) as max_account_group
@@ -83,7 +84,8 @@ from
 	account a 
 inner join 
 	question q on a.account_id = q.creator_id 
-where a.account_id in (
+where 
+	a.account_id in (
 	select account_id 
     from account 
     where account_username like 'Username1%'
