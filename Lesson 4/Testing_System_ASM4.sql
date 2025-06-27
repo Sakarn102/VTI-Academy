@@ -31,8 +31,8 @@ having
     select max(account_group)
     from (
 		select count(group_id) as account_group
-        from groupaccount 
-        group by account_id 
+        	from groupaccount 
+        	group by account_id 
 		) as sub
     );
     
@@ -86,9 +86,9 @@ inner join
 	question q on a.account_id = q.creator_id 
 where 
 	a.account_id in (
-	select account_id 
-    from account 
-    where account_username like 'Username1%'
+	   select account_id 
+    	   from account 
+    	   where account_username like 'Username1%'
 );
 
         
