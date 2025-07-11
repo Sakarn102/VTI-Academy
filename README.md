@@ -1,2 +1,4 @@
-Nộp bài tập Database MySQL   
-Họ tên: Nguyễn Tuấn Anh
+VTI - Academy
+  Name: Nguyễn Tuấn Anh
+  Class: RA 95
+
