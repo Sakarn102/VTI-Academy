@@ -1,27 +1,10 @@
 package Testing_System;
 
 public class TypeQuestion {
-	private int typeID;
-	Type_Name typeName;
+	public int id;
+	public TypeName name;
 	
-	public TypeQuestion(int typeID, Type_Name typeName) {
-		this.typeID = typeID;
-		this.typeName = typeName;
+	public enum TypeName {
+		Essay, Multiple_choice
 	}
-
-	@Override
-	public String toString() {
-		return 
-				"TypeID: " + typeID + "\n"
-				+"TypeName: " + typeName + "\n";
-	}
-
-	public int getTypeID() {
-		return typeID;
-	}
-
-	public void setTypeID(int typeID) {
-		this.typeID = typeID;
-	}
-	
 }
