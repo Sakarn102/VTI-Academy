@@ -96,7 +96,7 @@ CREATE TABLE Exam (
 DROP TABLE IF EXISTS ExamQuestion;
 CREATE TABLE ExamQuestion (
     ExamID TINYINT UNSIGNED NOT NULL,
-    QuestionID TINYINT UNSIGNED NOT NULL,
+    QuestionID TINYINT UNSIGNED NOT NULL,get_customer_order
     PRIMARY KEY (ExamID, QuestionID),
     FOREIGN KEY(ExamID) REFERENCES Exam(ExamID),
     FOREIGN KEY(QuestionID) REFERENCES Question(QuestionID)
