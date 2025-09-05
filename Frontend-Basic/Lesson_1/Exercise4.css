@@ -1,0 +1,52 @@
+body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    .share-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .like {
+      background: #1877f2; /* xanh facebook */
+    }
+    .share {
+      background: #4267b2;
+    }
+    .email {
+      background: #333;
+    }
+    .btn span {
+      margin-left: 5px;
+    }
+    .follow {
+      margin-left: auto;
+      padding: 6px 15px;
+      border-radius: 20px;
+      background: #eee;
+      color: #444;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .follow span {
+      font-weight: bold;
+      color: #000;
+    }
+    .google {
+      font-family: "Google Sans", Arial, sans-serif;
+      font-weight: bold;
+      background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
